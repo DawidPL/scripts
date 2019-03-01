@@ -8,7 +8,7 @@ do edycji oraz skrypt powinny znajdować się w ten samej lokalizacji. W razie p
 '''
 
 source_file_path = 'source.xlsx' # ściezka do pliku bazowego
-source_file_column_to_be_filtered_name = 'kolumna' # nazwa kolumny z arkusza źródłowego, która zostanie poddana filtrowaniu
+source_file_column_to_be_filtered_name = 'column' # nazwa kolumny z arkusza źródłowego, która zostanie poddana filtrowaniu
 
 unwanted_phrases_file_path = 'unwanted_data.xlsx' # ścieżka do pliku zawierającego niechciane dane, które chcemy odfiltrować
 unwanted_phrases_column_name = 'sheet_name' # nazwa kolumny zawierającej nieporządane dane
