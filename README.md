@@ -10,4 +10,4 @@ for editing and the script should be in the same location. If necessary, you can
 - Pandas
 
 ## 1. Excel Filter v2
-Similar to the previous one. The main difference is that filtered data is saved to a new file along with data that was not filtered
+Similar to the previous one. The main difference is that filtered data is saved to a new file along with data that was not filtered (if other columns exist)
