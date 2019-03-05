@@ -8,3 +8,6 @@ for editing and the script should be in the same location. If necessary, you can
 ## Used:
 - Python 3.7
 - Pandas
+
+## 1. Excel Filter v2
+Similar to the previous one. The main difference is that filtered data is saved to a new file along with data that was not filtered
