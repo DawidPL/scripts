@@ -1,0 +1,30 @@
+import pandas as pd
+
+
+class ExcelEditor:
+    def __init__(self, source_file_path, unwanted_phrases_file_path, unwanted_phrases_column_name, filtered_file_name):
+        self.source_file_path = source_file_path
+        self.unwanted_phrases_file_path = unwanted_phrases_file_path
+        self.unwanted_phrases_column_name = unwanted_phrases_column_name
+        self.filtered_file_name = filtered_file_name
+
+    def generator(self):
+        source_file_data_frame = pd.read_excel(self.source_file_path)
+        filtered_column = (row for index, row in source_file_data_frame.iterrows())
+        for i in filtered_column:
+            yield i
+
+    def excel_editor(self):
+        unwanted_phrases_rows = pd.read_excel(self.unwanted_phrases_file_path)
+        unwanted_phrases = [row[self.unwanted_phrases_column_name] for index, row in unwanted_phrases_rows.iterrows()]
+        result_rows = []
+        for row in self.generator():
+            if row.Email not in unwanted_phrases:
+                result_rows.append(row)
+        pd.DataFrame(result_rows).to_excel(
+            excel_writer=self.filtered_file_name,
+            index=False)
+
+
+test = ExcelEditor('data_to_filter.xlsx', 'data_to_remove.xlsx', 'sheet_name', 'result.xlsx')
+test.excel_editor()
